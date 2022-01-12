@@ -7,22 +7,20 @@ var defaultNum = 1;
 function download (url, title) {
     //check if title is valid and remove invalid characters
     var str = "";
-    var lastCode = 0;
     for (i = 0, len = title.length; i < len; i++) {
         code = title.charCodeAt(i);
         if (!(code == 32 && str.charCodeAt(str.length - 1) == 32) && (code > 31 && code < 123) && (!(code > 32 && code < 48) || code == 39) && !(code > 57 && code < 65) && !(code > 90 && code < 97)) {
             str += String.fromCharCode(code);
         }
-        lastCode = code;
     }
 
     //unique default names for each song
-    if (str.length == 0) {
+    if (str.length < 2) {
         str = 'default - ' + defaultNum;
         defaultNum++;
     }
 
-    ytdl(url, {format: 'mp3'}).pipe(fs.createWriteStream('songs/'+str+'.mp3'));
+    ytdl(url, {filter: 'audioonly'}).pipe(fs.createWriteStream('songs/'+str+'.mp3'));
     console.log(title + " downloading" + (str!=title?(", name changed to "+str):"") + ".");
 }
 
@@ -33,7 +31,7 @@ var playlists = [
 async function downloadAll() {
     for (const ID of playlists) {
         console.log('Playlist ID requested: ' + ID);
-        const playlist = await ytpl(ID);
+        const playlist = await ytpl(ID, {limit: 9999});
         playlist.items.forEach(element => {
             download(element.url, element.title);
         });
