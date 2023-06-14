@@ -9,9 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "cors": "^2.8.5",
     "express": "^4.17.2",
-    "ytdl-core": "^4.10.0",
+    "ffmetadata": "^1.7.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "video-converter": "^1.0.0",
+    "ytdl": "^1.4.1",
+    "ytdl-core": "^4.11.4",
     "ytpl": "^2.2.3"
   }
 }
