@@ -1,5 +1,5 @@
 const fs = require('fs');
-const config = require('./config.json');
+const config = JSON.parse(fs.readFileSync('config.json'));
 
 const ytdl = require('ytdl-core');
 const ytpl = require('ytpl');

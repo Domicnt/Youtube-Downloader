@@ -1,12 +1,31 @@
-
 **Youtube Downloader**
 ===
 ---
-A simple node.js app to download youtube playlists locally.
+A simple node.js app to download songs from youtube playlists locally.
 
 Usage
 ---
-To download playlists, change the values in the "playlists" variable in index.js.
-It accepts youtube playlist IDs such as this one in italics: youtube.com/playlist?list=_PL1-8jr0CH4XENRRPD1m__bf7pz4AFNvfP_
+Add the URL of the playlist(s) you want to download to the 
+config JSON file. The config file should look like this:
 
-To run the program, make sure you have node downloaded, navigate to the folder in a terminal, and enter `node index.js`
+    {
+        "playlists": [
+            ""
+        ]
+    }
+    
+After adding multiple playlists, the config file should look
+something like this:
+
+    {
+        "playlists": [
+            "https://www.youtube.com/playlist?list=PL1-8jr0CH4XH4hkjusadnnYusdiWiisda",
+            "https://www.youtube.com/playlist?list=PL1-8jr0CH4XH4hkjusadnnYusdiWiisda",
+            "https://www.youtube.com/playlist?list=PL1-8jr0CH4XH4hkjusadnnYusdiWiisda"
+        ]
+    }
+    
+Note that playlists must be separated by commas, but there is no trailing comma.
+
+Once the config file is set up, save and close it, then run the Downloader.exe 
+executable file, and all songs will be put in the /downloads folder.
