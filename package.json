@@ -1,4 +1,17 @@
 {
+  "name": "Youtube-Downloader",
+  "author": "Domicnt",
+  "version": "0.1.0",
+  "description": "Node.js app to download youtube playlists as audio files. Built specifically to download music.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Domicnt/Youtube-Downloader.git"
+  },
+  "bugs": "https://github.com/Domicnt/Youtube-Downloader/issues",
+  "homepage": "https://github.com/Domicnt/Youtube-Downloader",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "index.js",
   "dependencies": {
     "ytdl-core": "^4.11.4",
     "ytpl": "^2.3.0"
